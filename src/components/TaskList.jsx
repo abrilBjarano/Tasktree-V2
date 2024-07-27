@@ -13,7 +13,7 @@ export const TaskList = ({ tasks }) => {
 
    return (
       <ul className="list-group">
-         { ( ( location.pathname === '/') ? tasksDone : tasksUndone ).map( task => (
+         { ( ( location.pathname === '/') ? tasksUndone : tasksDone ).map( task => (
             <TaskItem 
                task={ task }
                key={ task.id }
