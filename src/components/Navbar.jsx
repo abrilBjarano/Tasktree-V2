@@ -9,16 +9,16 @@ export const Navbar = () => {
 
    
    return (
-      <nav class="navbar navbar-expand navbar-dark bg-dark rounded-bottom mb-4">
+      <nav className="navbar navbar-expand navbar-dark bg-dark rounded-bottom mb-4">
          <div className="d-flex justify-content-center">
 
-            <a class="navbar-brand d-flex align-items-center mx-4">
+            <a className="navbar-brand d-flex align-items-center mx-4">
                <img className="me-2" src={ tree } width="30" height="30" />
                Tasktree
             </a>
             
-            <div class="collapse navbar-collapse" id="navbarNav">
-               <div class="navbar-nav">
+            <div className="collapse navbar-collapse" id="navbarNav">
+               <div className="navbar-nav">
                   
                   { routes.map( route => (
                      
