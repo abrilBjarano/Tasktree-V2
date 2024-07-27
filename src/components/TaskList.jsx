@@ -12,7 +12,7 @@ export const TaskList = ({ tasks }) => {
 
 
    return (
-      <ul className="list-group">
+      <ul className="list-group mb-5">
          { ( ( location.pathname === '/') ? tasksUndone : tasksDone ).map( task => (
             <TaskItem 
                task={ task }

@@ -17,8 +17,22 @@ export const TaskProvider = ({ children }) => {
    const [ tasks, dispatch ] = useReducer( taskReducer, initialState );
 
 
+   const taskAdd = ( newTask ) => {
+      dispatch({
+         type: 'Task add',
+         payload: newTask
+      })
+   };
+
+
    return (
-      <TaskContext.Provider value={{ tasks }}>
+      <TaskContext.Provider 
+         value={{ 
+            tasks,
+            taskAdd, 
+         }}
+      >
+
          { children }
       </TaskContext.Provider>
    )

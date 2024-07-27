@@ -2,7 +2,7 @@ export const taskReducer = ( state, action ) => {
    
    switch( action.type ){
 
-      case 'Add task':
+      case 'Task add':
          return [ ...state, action.payload ];
 
       default:
