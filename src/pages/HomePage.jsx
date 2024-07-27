@@ -1,5 +1,10 @@
+import { TaskAdd } from "../components/TaskAdd"
+
+
 export const HomePage = () => {
    return (
-      <div>HomePage</div>
+      <>
+         <TaskAdd />
+      </>
    )
 }
