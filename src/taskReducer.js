@@ -16,6 +16,9 @@ export const taskReducer = ( state, action ) => {
                : task
          ))
 
+      case 'Task delete completed':
+         return state.filter( task => task.status === false );
+
       default:
          return state;
 

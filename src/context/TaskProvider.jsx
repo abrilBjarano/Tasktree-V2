@@ -38,6 +38,13 @@ export const TaskProvider = ({ children }) => {
       })
    };
 
+   const taskDeleteCompleted = () => {
+      dispatch({
+         type: 'Task delete completed'
+      })
+      console.log('jeje');
+   };
+
 
    return (
       <TaskContext.Provider 
@@ -46,6 +53,7 @@ export const TaskProvider = ({ children }) => {
             taskAdd,
             taskDelete, 
             taskToggle,
+            taskDeleteCompleted,
          }}
       >
 
