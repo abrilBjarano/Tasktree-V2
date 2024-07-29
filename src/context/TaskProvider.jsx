@@ -31,6 +31,13 @@ export const TaskProvider = ({ children }) => {
       })
    };
 
+   const taskToggle = ( id ) => {
+      dispatch({
+         type: 'Task toggle',
+         payload: id
+      })
+   };
+
 
    return (
       <TaskContext.Provider 
@@ -38,6 +45,7 @@ export const TaskProvider = ({ children }) => {
             tasks,
             taskAdd,
             taskDelete, 
+            taskToggle,
          }}
       >
 

@@ -4,13 +4,8 @@ import { useLocation } from "react-router-dom";
 
 export const TaskItem = ({ task }) => {
 
-   const { taskDelete } = useContext( TaskContext );
+   const { taskDelete, taskToggle } = useContext( TaskContext );
    const location = useLocation();
-
-
-   const onTaskDelete = ( task ) => {
-      taskDelete( task.id );
-   };
 
 
    return (
@@ -19,16 +14,22 @@ export const TaskItem = ({ task }) => {
          { ( location.pathname === '/' )
             ? 
                <>
-                  { task.description }
+                  <div onClick={ () => taskToggle( task.id )}>
+                     { task.description }
+                  </div>
+
                   <div>
                      <button
-                        onClick={ () => onTaskDelete( task ) }
+                        onClick={ () => taskDelete( task.id ) }
                         className="btn btn-danger">
                            X
                      </button>
                   </div>
                </>
-            : <del> { task.description } </del>              
+            : 
+               <del onClick={ () => taskToggle( task.id )}>
+                  { task.description } 
+               </del>              
 
          }
 
