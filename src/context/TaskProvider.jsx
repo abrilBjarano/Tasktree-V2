@@ -24,12 +24,20 @@ export const TaskProvider = ({ children }) => {
       })
    };
 
+   const taskDelete = ( id ) => {
+      dispatch({
+         type: 'Task delete',
+         payload: id
+      })
+   };
+
 
    return (
       <TaskContext.Provider 
          value={{ 
             tasks,
-            taskAdd, 
+            taskAdd,
+            taskDelete, 
          }}
       >
 
