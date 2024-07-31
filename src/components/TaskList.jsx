@@ -20,7 +20,7 @@ export const TaskList = () => {
          ))}
 
          {(( location.pathname === '/') ? tasksUndone : tasksDone ).length === 0 && (
-            <h1 className="d-flex justify-content-center align-items-center">Emtpy!</h1>
+            <h1 className="d-flex justify-content-center align-items-center text-danger mt-5">Emtpy!</h1>
          )}
       </ul>
    )
