@@ -47,6 +47,11 @@ export const TaskProvider = ({ children }) => {
       })
    };
 
+   
+   const totalTasks = tasks.length;
+   const totalUndoneTasks = tasksUndone.length;
+   const totalDoneTasks = tasksDone.length;
+
 
    return (
       <TaskContext.Provider 
@@ -58,6 +63,9 @@ export const TaskProvider = ({ children }) => {
             taskDelete, 
             taskToggle,
             taskDeleteCompleted,
+            totalTasks,
+            totalUndoneTasks,
+            totalDoneTasks,
          }}
       >
 
