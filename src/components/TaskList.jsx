@@ -13,12 +13,16 @@ export const TaskList = ({ tasks }) => {
 
    return (
       <ul className="list-group mb-5">
-         { ( ( location.pathname === '/') ? tasksUndone : tasksDone ).map( task => (
-            <TaskItem 
+         {(( location.pathname === '/') ? tasksUndone : tasksDone ).map( task => (
+            <TaskItem
                task={ task }
                key={ task.id }
             />
          ))}
+
+         {(( location.pathname === '/') ? tasksUndone : tasksDone ).length === 0 && (
+            <h1 className="d-flex justify-content-center align-items-center">Emtpy!</h1>
+         )}
       </ul>
    )
 }
