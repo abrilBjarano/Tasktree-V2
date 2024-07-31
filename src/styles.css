@@ -1,0 +1,8 @@
+body {
+   background-image: url('assets/paper.png');
+   background-size: cover; /* Ajusta la foto para cubrir todo el body */
+   background-position: center; /* Centra la foto */
+   background-repeat: no-repeat; /* Evita la repetición de la foto */
+   height: 100vh; /* Asegura que el body tenga al menos el alto de la vista */
+   margin: 0; /* Elimina el margen por defecto */
+ }
