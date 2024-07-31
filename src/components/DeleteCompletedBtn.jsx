@@ -4,8 +4,12 @@ import { TaskContext } from "../context/TaskContext";import { toast } from 'sonn
 
 export const DeleteCompletedBtn = () => {
 
-   const { taskDeleteCompleted } = useContext( TaskContext );
+   const { taskDeleteCompleted, tasksDone } = useContext( TaskContext );
 
+   const emptyBtn = () => {
+      return tasksDone.length === 0;
+   };
+   
 
    return (
       <div className="d-flex justify-content-end">
@@ -15,8 +19,10 @@ export const DeleteCompletedBtn = () => {
                   toast.error('Deleted all completed tasks');
                } 
             }
-            className="btn btn-danger mb-4">
-               Delete all completed tasks
+            disabled={ emptyBtn() }
+            className="btn btn-danger mb-4"
+         >
+            Delete all completed tasks
          </button>
       </div>
    )
