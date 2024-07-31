@@ -16,6 +16,9 @@ export const TaskProvider = ({ children }) => {
 
    const [ tasks, dispatch ] = useReducer( taskReducer, initialState );
 
+   const tasksDone = tasks.filter( task => task.status === true );
+   const tasksUndone = tasks.filter( task => task.status === false );
+
 
    const taskAdd = ( newTask ) => {
       dispatch({
@@ -42,7 +45,6 @@ export const TaskProvider = ({ children }) => {
       dispatch({
          type: 'Task delete completed'
       })
-      console.log('jeje');
    };
 
 
@@ -50,6 +52,8 @@ export const TaskProvider = ({ children }) => {
       <TaskContext.Provider 
          value={{ 
             tasks,
+            tasksDone,
+            tasksUndone,
             taskAdd,
             taskDelete, 
             taskToggle,

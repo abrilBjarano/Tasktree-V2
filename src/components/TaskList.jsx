@@ -1,14 +1,13 @@
 import { useLocation } from "react-router-dom";
 import { TaskItem } from "./TaskItem";
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
 
-export const TaskList = ({ tasks }) => {
+export const TaskList = () => {
 
    const location = useLocation();
-
-
-   const tasksDone = tasks.filter( task => task.status === true );
-   const tasksUndone = tasks.filter( task => task.status === false );
+   const { tasksDone, tasksUndone } = useContext( TaskContext );
 
 
    return (
