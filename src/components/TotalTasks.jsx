@@ -8,7 +8,7 @@ export const TotalTasks = () => {
 
 
    return (
-      <h6 className="d-flex justify-content-center">
+      <h6 className="d-flex justify-content-center mb-5">
          Total tasks: { totalTasks }, total undone tasks: { totalUndoneTasks }, total done tasks: { totalDoneTasks }
       </h6>
    )
