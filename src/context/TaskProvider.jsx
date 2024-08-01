@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { TaskContext } from "./TaskContext";
 import { v4 as uuid } from 'uuid';
 import { taskReducer } from "../taskReducer";
@@ -12,12 +12,22 @@ const initialState = [
 ]
 
 
+const init = () => {
+   return JSON.parse( localStorage.getItem('tasks') ) || initialState;
+};
+
+
 export const TaskProvider = ({ children }) => {
 
-   const [ tasks, dispatch ] = useReducer( taskReducer, initialState );
+   const [ tasks, dispatch ] = useReducer( taskReducer, initialState, init );
 
    const tasksDone = tasks.filter( task => task.status === true );
    const tasksUndone = tasks.filter( task => task.status === false );
+
+
+   useEffect(() => {
+      localStorage.setItem('tasks', JSON.stringify( tasks ));
+   }, [ tasks ]);
 
 
    const taskAdd = ( newTask ) => {
