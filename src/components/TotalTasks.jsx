@@ -4,12 +4,12 @@ import { TaskContext } from "../context/TaskContext";
 
 export const TotalTasks = () => {
 
-   const { totalTasks, totalUndoneTasks, totalDoneTasks } = useContext( TaskContext );
+   const { totalUndoneTasks, totalDoneTasks } = useContext( TaskContext );
 
 
    return (
       <h6 className="d-flex justify-content-center mb-5">
-         Total tasks: { totalTasks }, total undone tasks: { totalUndoneTasks }, total done tasks: { totalDoneTasks }
+         🔲 tasks: { totalUndoneTasks }, ✅ tasks: { totalDoneTasks }
       </h6>
    )
 }

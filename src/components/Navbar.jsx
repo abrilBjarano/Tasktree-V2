@@ -14,7 +14,7 @@ export const Navbar = () => {
 
             <a className="navbar-brand d-flex align-items-center mx-4">
                <img className="me-2" src={ tree } width="30" height="30" />
-               Tasktree
+               <span className="d-none d-sm-inline">Tasktree</span>
             </a>
             
             <div className="collapse navbar-collapse" id="navbarNav">
